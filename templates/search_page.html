@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="static/admin/layui/css/layui.css"/>
+        <link rel="stylesheet" type="text/css" href="static/admin/css/admin.css"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/layui/css/layui.css') }}"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/css/admin.css') }}"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/home2.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="home2.css">
+		<script src="http://img.jb51.net/jslib/jquery/jquery.js" type="text/javascript"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+        <title>事件进度查询</title>
+		<script>
+		function fnature() {
+			document.getElementById('inature').value=document.getElementById('iinature').value;
+		}
+		function fway() {
+			document.getElementById('iway').value=document.getElementById('iiway').value;
+		}
+		$(document).ready(function(){
+			$("#street").change(function(){
+				$("#street option").each(function(i,o){
+					if($(this).attr("selected"))
+					{
+						$(".community").hide();
+						$(".community").eq(i).show();
+					}
+				});
+			});
+			$("#street").change();
+		});
+		function fstreet(){
+			document.getElementById('istreet').value=document.getElementById('street').value;
+		}
+		function fcommunity1(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity1').value;
+        }
+        function fcommunity2(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity2').value;
+        }
+        function fcommunity3(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity3').value;
+        }
+        function fcommunity4(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity4').value;
+        }
+        function fcommunity5(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity5').value;
+        }
+        function fcommunity6(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity6').value;
+        }
+		</script>
+	</head>
+	<body>
+		<div class="main-layout" id='main-layout'>
+			<!--侧边栏-->
+			<div class="main-layout-side">
+				<div class="m-logo">
+				</div>
+				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+				  <li class="layui-nav-item layui-nav-itemed">
+				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>主页</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href="http://127.0.0.1:5000/home/" data-text="异常事件" title="异常事件"><span class="l-line"></span>异常报警</a></dd>
+				      <dd><a href="http://127.0.0.1:5000/home/zdy" data-text="自定义异常事件"  title="自定义异常事件"><span class="l-line"></span>自定义异常事件</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/jrms/" data-text="今日民生" title="今日民生"><i class="iconfont">&#xe604;</i>今日民生</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/mssj/" data-text="民生事件情况" title="民生事件情况"><i class="iconfont">&#xe60c;</i>民生事件情况</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/sjjb/" data-text="事件结办分析" title="事件结办分析"><i class="iconfont">&#xe60a;</i>事件结办分析</a>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/rdsq/" data-text="热点社区分析" title="热点社区分析"><i class="iconfont">&#xe603;</i>热点社区分析</a>
+				  </li>
+					<li class="layui-nav-item layui-nav-itemed">
+					<a href="javascript:;"><i class="iconfont">&#xe607;</i>个人中心</a>
+					<dl class="layui-nav-child">
+						<dd><a href="http://127.0.0.1:5000/search/" data-text="事件进度查询" title="事件进度查询"><span class="l-line"></span>事件进度查询</a></dd>
+					  	<dd><a href="http://127.0.0.1:5000/event_input/" data-text="事件输入" title="事件输入"><span class="l-line"></span>事件输入</a></dd>
+						<dd><a href="http://127.0.0.1:5000/progress_update/" data-text="事件进度更新" title="事件进度更新"><span class="l-line"></span>事件进度更新</a></dd>
+					  <dd><a href="http://127.0.0.1:5000/logout" data-text="登出"  title="登出"><span class="l-line"></span>登出</a></dd>
+					</dl>
+				  </li>
+				</ul>
+			</div>
+			<!--右侧内容-->
+			<div class="main-layout-container">
+				<!--头部-->
+				<div class="main-layout-header">
+					<div class="menu-btn" id="hideBtn">
+						<a href="javascript:;">
+							<span class="iconfont">&#xe60e;</span>
+						</a>
+					</div>
+				</div>
+				<!--主体内容-->
+				<div class="main-layout-body">
+					<!--tab 切换-->
+					<div class="layui-tab layui-tab-brief main-layout-tab" lay-filter="tab" lay-allowClose="true">
+					  <ul class="layui-tab-title">
+					    <li class="layui-this welcome">事件进度查询</li>
+					  </ul>
+					  <div class="layui-tab-content">
+<!--                          主体-->
+<form method="post" style="position:absolute;left:10%;top:20%;font-size:18px">
+    <div class="loginBox f1">
+		<input type="text" name="date" placeholder="请输入日期"/><br>
+		<input type="text" name="way" id="iway"  placeholder="请输入投诉渠道"/>
+		<select class="way" id = "iiway" style="width:240px" onchange="fway()">
+			<option>请输入问题来源</option>
+			<option>12345</option>
+			<option>@坪山</option>
+			<option>美丽深圳</option>
+			<option>固话投诉</option>
+			<option>政府信箱</option>
+			<option>12319</option>
+		</select><br>
+		<input type="text" name="street" id="istreet" placeholder="请输入问题街道"/>
+		<select id="street" onchange="fstreet()" style="width:240px">
+			<option>请输入所属街道
+			<option>龙田街道
+			<option>坪山街道
+			<option>碧岭街道
+			<option>坑梓街道
+			<option>马峦街道
+			<option>石井街道
+		</select><br>
+		<input type="text" name="community" id="icommunity" placeholder="请输入问题社区"/>
+		<select class="community" id="iicommunity0" style="width:240px">
+			<option>请输入问题社区
+		</select>
+		<select class="community" id="iicommunity1" onchange="fcommunity1()" style="width:240px">
+			<option>请选择</option>
+			<option>南布社区</option>
+			<option>老坑社区</option>
+			<option>竹坑社区</option>
+			<option>龙田社区</option>
+		</select>
+		<select class="community" id="iicommunity2" onchange="fcommunity2()" style="width:240px">
+			<option>请选择</option>
+			<option>和平社区</option>
+			<option>坪山社区</option>
+			<option>六和社区</option>
+			<option>六联社区</option>
+		</select>
+		<select class="community" id="iicommunity3" onchange="fcommunity3()" style="width:240px">
+			<option>请选择</option>
+			<option>汤坑社区</option>
+			<option>沙湖社区</option>
+			<option>碧岭社区</option>
+		</select>
+		<select class="community" id="iicommunity4" onchange="fcommunity4()" style="width:240px">
+			<option>请选择</option>
+			<option>金沙社区</option>
+			<option>秀新社区</option>
+			<option>沙田社区</option>
+			<option>坑梓社区</option>
+		</select>
+		<select class="community" id="iicommunity5" onchange="fcommunity5()" style="width:240px">
+			<option>请选择</option>
+			<option>江岭社区</option>
+			<option>坪环社区</option>
+			<option>沙坣社区</option>
+			<option>马峦社区</option>
+		</select>
+		<select class="community" id="iicommunity6" onchange="fcommunity6()" style="width:240px">
+			<option>请选择</option>
+			<option>石井社区</option>
+			<option>田头社区</option>
+			<option>田心社区</option>
+			<option>金龟社区</option>
+		</select><br>
+
+		<input type="text" name="nature" id="inature" placeholder="请输入事件性质"/>
+    	<select class="nature" id = "iinature" style="width:240px" onchange="fnature()">
+        	<option>请输入事件性质</option>
+			<option>投诉</option>
+			<option>咨询</option>
+			<option>建议</option>
+			<option>感谢</option>
+			<option>求决</option>
+			<option>其他</option>
+    	</select><br>
+		<input type="submit" value="查询"><br>
+    </div>
+{% for message in get_flashed_messages() %}
+    {{ message }}
+    <br>
+{% endfor %}
+{% for key in target_event %}
+    {{target_event[key][0]}}&nbsp{{target_event[key][1]}}&nbsp{{target_event[key][2]}}&nbsp{{target_event[key][3]}}&nbsp{{target_event[key][4]}}&nbsp{{target_event[key][5]}}&nbsp{{target_event[key][6]}}&nbsp{{target_event[key][7]}}&nbsp{{target_event[key][8]}}&nbsp{{target_event[key][9]}}&nbsp{{target_event[key][10]}}
+    <br>
+{% endfor %}
+</form></div>
+<!--                          主体结束-->
+					  </div>
+					</div>
+				</div>
+			</div>
+			<!--遮罩-->
+			<div class="main-mask">
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			var scope={
+				link:'./welcome.html'
+			}
+		</script>
+		<script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/admin/js/main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>
+
+<script type="text/javascript">
+    var area = document.getElementById('moocBox');
+    var con1 = document.getElementById('con1');
+    var con2 = document.getElementById('con2');
+    var speed = 50;
+    area.scrollTop = 0;
+    con2.innerHTML = con1.innerHTML;
+    function scrollUp(){
+        if(area.scrollTop >= con1.scrollHeight) {
+            area.scrollTop = 0;
+        }else{
+            area.scrollTop ++; //向上滚动
+        }
+    }
+    var myScroll = setInterval("scrollUp()",speed);
+    area.onmouseover = function(){
+        clearInterval(myScroll);
+    }
+    area.onmouseout = function(){
+        myScroll = setInterval("scrollUp()",speed);
+    }
+</script>

@@ -1,0 +1,110 @@
+div.top{
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    font-size: 20px;
+}
+div.top1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    background: linear-gradient(to bottom, #2719ff 0%,#ffffff 100%);
+    height: 100px;
+}
+div.top2{
+    position: absolute;
+    top: 98px;
+    left: 0px;
+    width:100%;
+    /*background-image:url('/static/picture/home_1.png');*/
+    background-image:url('images/home_1.png');
+    height: 2px;
+}
+a.top{
+    font-size: 20px;
+}
+
+div.show1{
+   text-align: center;
+}
+div.a1{
+    position: relative;
+    top: 10px;
+    left: 0px;
+    height: 40px;
+    width: 40px;
+    display: inline;
+    font-size: 30px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #28fffd 50%, #ffffff 100%);
+}
+div.a2{
+    position: relative;
+    top: 10px;
+    left: 40px;
+    height: 80px;
+    width: 40px;
+    display: inline;
+    font-size: 30px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #28fffd 50%, #ffffff 100%);
+}
+div.a3{
+    position: relative;
+    top: 10px;
+    left: 80px;
+    height: 80px;
+    width: 40px;
+    display: inline;
+    font-size: 30px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #28fffd 50%, #ffffff 100%);
+}
+div.a4{
+    position: relative;
+    top: 10px;
+    left: 120px;
+    height: 80px;
+    width: 40px;
+    display: inline;
+    font-size: 30px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #28fffd 50%, #ffffff 100%);
+}
+div.a5{
+    position: relative;
+    top: 10px;
+    left: 160px;
+    height: 80px;
+    width: 40px;
+    display: inline;
+    font-size: 30px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #28fffd 50%, #ffffff 100%);
+}
+div.a6{
+    position: relative;
+    top: 10px;
+    left: 200px;
+    height: 80px;
+    width: 40px;
+    display: inline;
+    font-size: 30px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #28fffd 50%, #ffffff 100%);
+}
+h1.title1{
+    text-align: right;
+    width: 80%;
+    font-size: 50px;
+    position: absolute;
+    top: 40px;
+    font-style: oblique;
+    color: #72ffff;
+}
+div.backg{
+    position: absolute;
+    top:150px;
+    width: 100%;
+}

@@ -1,0 +1,7 @@
+div.main{
+    background-image: url("picture/test0.jpg");
+    background-position: center;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}

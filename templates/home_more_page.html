@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>主页</title>
+		<link rel="stylesheet" type="text/css" href="static/admin/layui/css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="static/admin/css/admin.css"/>
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/layui/css/layui.css') }}"/>
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/css/admin.css') }}"/>
+		<style>
+		#mooc {
+            width: 399px;
+            border: 5px solid #ababab;
+             -moz-border-radius: 15px;      /* Gecko browsers */
+             -webkit-border-radius: 15px;   /* Webkit browsers */
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px #ababab;
+            margin: 250px auto 0;
+            text-align: left;               /* 让新闻内容靠左 */
+        }
+        /*  头部样式 */
+        #moocTitle {
+            height: 62px;
+            overflow: hidden;  /* 这个一定要加上，内容超出的部分要隐藏，免得撑高头部 */
+            font-size: 26px;
+            line-height: 62px;
+            padding-left: 30px;
+            background-image: -moz-linear-gradient(top, #f05e6f, #c9394a); /* Firefox */
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f05e6f), color-stop(1, #c9394a)); /* Saf4+, Chrome */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fa1ff', endColorstr='#f05e6f', GradientType='0'); /* IE*/
+            border: 1px solid ##f05e6f;
+             -moz-border-radius: 8px 8px 0 0;      /* Gecko browsers */
+             -webkit-border-radius: 8px 8px 0 0;   /* Webkit browsers */
+            border-radius: 8px 8px 0 0;
+            color: #fff;
+            position: relative;
+
+        }
+                #moocBox {
+            height: 120px;
+            width: 335px;
+            margin-left: 25px;
+            margin-top: 10px;
+            overflow: hidden;    /*  这个一定要加，超出的内容部分要隐藏，免得撑高中间部分 */
+        }
+		</style>
+	</head>
+	<body>
+		<div class="main-layout" id='main-layout'>
+			<!--侧边栏-->
+			<div class="main-layout-side">
+				<div class="m-logo">
+				</div>
+				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+				  <li class="layui-nav-item layui-nav-itemed">
+				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>主页</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href="http://127.0.0.1:5000/home/" data-text="异常事件" title="异常事件"><span class="l-line"></span>异常报警</a></dd>
+				      <dd><a href="http://127.0.0.1:5000/home/zdy" data-text="自定义异常事件"  title="自定义异常事件"><span class="l-line"></span>自定义异常事件</a></dd>
+				    </dl>
+				  </li>
+				  <!--<li class="layui-nav-item">-->
+				    <!--<a href="javascript:;"><i class="iconfont">&#xe608;</i>内容管理</a>-->
+				    <!--<dl class="layui-nav-child">-->
+				      <!--<dd><a href="javascript:;" data-url="article-list.html" data-id='3' data-text="文章管理"><span class="l-line"></span>文章管理</a></dd>-->
+				      <!--<dd><a href="javascript:;" data-url="danye-list.html" data-id='9' data-text="单页管理"><span class="l-line"></span>单页管理</a></dd>-->
+				    <!--</dl>-->
+				  <!--</li>-->
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/jrms/" data-text="今日民生" title="今日民生"><i class="iconfont">&#xe604;</i>今日民生</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/mssj/" data-text="民生事件情况" title="民生事件情况"><i class="iconfont">&#xe60c;</i>民生事件情况</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/sjjb/" data-text="事件结办分析" title="事件结办分析"><i class="iconfont">&#xe60a;</i>事件结办分析</a>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/rdsq/" data-text="热点社区分析" title="热点社区分析"><i class="iconfont">&#xe603;</i>热点社区分析</a>
+				  </li>
+					<li class="layui-nav-item layui-nav-itemed">
+					<a href="javascript:;"><i class="iconfont">&#xe607;</i>个人中心</a>
+					<dl class="layui-nav-child">
+						<dd><a href="http://127.0.0.1:5000/search/" data-text="事件进度查询" title="事件进度查询"><span class="l-line"></span>事件进度查询</a></dd>
+					  	<dd><a href="http://127.0.0.1:5000/event_input/" data-text="事件输入" title="事件输入"><span class="l-line"></span>事件输入</a></dd>
+						<dd><a href="http://127.0.0.1:5000/progress_update/" data-text="事件进度更新" title="事件进度更新"><span class="l-line"></span>事件进度更新</a></dd>
+					  <dd><a href="http://127.0.0.1:5000/logout" data-text="登出"  title="登出"><span class="l-line"></span>登出</a></dd>
+					</dl>
+				  </li>
+				</ul>
+			</div>
+			<!--右侧内容-->
+			<div class="main-layout-container">
+				<!--头部-->
+				<div class="main-layout-header">
+					<div class="menu-btn" id="hideBtn">
+						<a href="javascript:;">
+							<span class="iconfont">&#xe60e;</span>
+						</a>
+					</div>
+				</div>
+				<!--主体内容-->
+				<div class="main-layout-body">
+					<!--tab 切换-->
+					<div class="layui-tab layui-tab-brief main-layout-tab" lay-filter="tab" lay-allowClose="true">
+					  <ul class="layui-tab-title">
+					    <li class="layui-this welcome">更多</li>
+					  </ul>
+					  <div class="layui-tab-content">
+					    <div class="layui-tab-item layui-show" style="background: #f5f5f5;overflow-y:scroll">
+                            <div class="bread" style="overflow-y:scroll">
+                                您所在的位置：
+                                <a href="http://127.0.0.1:5000/home/">首页</a>&raquo;
+                                更多
+                            </div >
+                            {% for index in index_list %}
+                                <span>
+                                    {{ data[0][index] }}{{ data[1][index] }}的{{ data[2][index] }}从{{ data[3][index] }}接到
+                                    {{ data[4][index] }}{{ data[5][index] }}, 请{{ data[6][index] }}尽快前往处理<br>
+                                </span>
+                            {% endfor %}
+					    </div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<!--遮罩-->
+			<div class="main-mask">
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			var scope={
+				link:'./welcome.html'
+			}
+		</script>
+		<script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/admin/js/main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>
+
+<script type="text/javascript">
+    var area = document.getElementById('moocBox');
+    var con1 = document.getElementById('con1');
+    var con2 = document.getElementById('con2');
+    var speed = 50;
+    area.scrollTop = 0;
+    con2.innerHTML = con1.innerHTML;
+    function scrollUp(){
+        if(area.scrollTop >= con1.scrollHeight) {
+            area.scrollTop = 0;
+        }else{
+            area.scrollTop ++; //向上滚动
+        }
+    }
+    var myScroll = setInterval("scrollUp()",speed);
+    area.onmouseover = function(){
+        clearInterval(myScroll);
+    }
+    area.onmouseout = function(){
+        myScroll = setInterval("scrollUp()",speed);
+    }
+</script>
+
+

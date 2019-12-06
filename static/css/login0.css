@@ -1,0 +1,14 @@
+body{
+    background-color: #354ddc;
+}
+
+div.loginBox{
+    background-color: #2719ff;
+    position: absolute;
+    left: 384px;
+    top: 288px;
+}
+
+li{
+    line-height: 50px;
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+		<script  src="/static/js/echarts.min.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="/static/admin/layui/css/layui.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/admin/css/admin.css"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/layui/css/layui.css') }}"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/css/admin.css') }}"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/home2.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/home2.css">
+        <title>热点社区</title>
+        <script type="text/javascript">
+            function get() {
+                var tt = document.getElementById("a").value;
+                var pp = document.getElementById("b").value;
+                if(tt>pp){
+                    alert("日期选择错误！请重新选择！");
+                }
+            }
+        </script>
+	</head>
+	<body>
+		<div class="main-layout" id='main-layout'>
+			<!--侧边栏-->
+			<div class="main-layout-side">
+				<div class="m-logo">
+				</div>
+				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+				  <li class="layui-nav-item layui-nav-itemed">
+				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>主页</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href="http://127.0.0.1:5000/home/" data-text="异常事件" title="异常事件"><span class="l-line"></span>异常报警</a></dd>
+				      <dd><a href="http://127.0.0.1:5000/home/zdy" data-text="自定义异常事件"  title="自定义异常事件"><span class="l-line"></span>自定义异常事件</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/jrms/" data-text="今日民生" title="今日民生"><i class="iconfont">&#xe604;</i>今日民生</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/mssj/" data-text="民生事件情况" title="民生事件情况"><i class="iconfont">&#xe60c;</i>民生事件情况</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/sjjb/" data-text="事件结办分析" title="事件结办分析"><i class="iconfont">&#xe60a;</i>事件结办分析</a>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/rdsq/" data-text="热点社区分析" title="热点社区分析"><i class="iconfont">&#xe603;</i>热点社区分析</a>
+				  </li>
+					<li class="layui-nav-item layui-nav-itemed">
+					<a href="javascript:;"><i class="iconfont">&#xe607;</i>个人中心</a>
+					<dl class="layui-nav-child">
+						<dd><a href="http://127.0.0.1:5000/search/" data-text="事件进度查询" title="事件进度查询"><span class="l-line"></span>事件进度查询</a></dd>
+					  	<dd><a href="http://127.0.0.1:5000/event_input/" data-text="事件输入" title="事件输入"><span class="l-line"></span>事件输入</a></dd>
+						<dd><a href="http://127.0.0.1:5000/progress_update/" data-text="事件进度更新" title="事件进度更新"><span class="l-line"></span>事件进度更新</a></dd>
+					  <dd><a href="http://127.0.0.1:5000/logout" data-text="登出"  title="登出"><span class="l-line"></span>登出</a></dd>
+					</dl>
+				  </li>
+				</ul>
+			</div>
+			<!--右侧内容-->
+			<div class="main-layout-container">
+				<!--头部-->
+				<div class="main-layout-header">
+					<div class="menu-btn" id="hideBtn">
+						<a href="javascript:;">
+							<span class="iconfont">&#xe60e;</span>
+						</a>
+					</div>
+				</div>
+				<!--主体内容-->
+				<div class="main-layout-body">
+					<!--tab 切换-->
+					<div class="layui-tab layui-tab-brief main-layout-tab" lay-filter="tab" lay-allowClose="true">
+					  <ul class="layui-tab-title">
+					    <li class="layui-this welcome">热点社区</li>
+					  </ul>
+					  <div class="layui-tab-content">
+
+        <div class="input"     style="position: absolute;
+        top: 50px;left: 50px;
+        height:80%;width:95%">
+        <form method="post">
+            <label>起始日期</label>
+            <input type="date" name='start' id="a" max="2018-10-30" value="2018-10-30"/>
+            <label>终止日期</label>
+            <input type="date" name="end" id="b" max="2018-10-30" value="2018-10-30"/>
+            <button onclick="get()">确认</button>
+        </form>
+
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=qXSuaofUDxcrWizK1ENZ0XQjmjXqQT6M&__ec_v__=20190126"></script>
+       <script type="text/javascript" src="/static/js/bmap.min.js"></script>
+       <script type="text/javascript">
+            num_list = eval('{{num_list_json|safe }}');
+            var dom = document.getElementById("container");
+            var myChart = echarts.init(dom);
+            option = null;
+            var data = [//各个社区民生情况的数据
+                {name:'马峦社区',value:num_list[0]},
+                {name:'金龟社区',value:num_list[1]},
+                {name:'汤坑社区',value:num_list[2]},
+                {name:'江岭社区',value:num_list[3]},
+                {name:'坪环社区',value:num_list[4]},
+                {name:'坪山社区',value:num_list[5]},
+                {name:'沙坣社区',value:num_list[6]},
+                {name:'六联社区',value:num_list[7]},
+                {name:'田头社区',value:num_list[8]},
+                {name:'碧岭社区',value:num_list[9]},
+                {name:'沙湖社区',value:num_list[10]},
+                {name:'田心社区',value:num_list[11]},
+                {name:'六和社区',value:num_list[12]},
+                {name:'竹坑社区',value:num_list[13]},
+                {name:'老坑社区',value:num_list[14]},
+                {name:'坑梓社区',value:num_list[15]},
+                {name:'和平社区',value:num_list[16]},
+                {name:'石井社区',value:num_list[17]},
+                {name:'南布社区',value:num_list[18]},
+                {name:'金沙社区',value:num_list[19]},
+                {name:'龙田社区',value:num_list[20]},
+                {name:'沙田社区',value:num_list[21]},
+                {name:'秀新社区',value:num_list[22]},
+            ];
+            var geoCoordMap = {//各个社区的坐标
+                '马峦社区':[114.338203,22.644538],
+                '金龟社区':[114.406461,22.663744],
+                '汤坑社区':[114.331079,22.678805],
+                '江岭社区':[114.362596,22.692020],
+                '坪环社区':[114.354740,22.688096],
+                '坪山社区':[114.357265,22.696259],
+                '沙坣社区':[114.377888,22.690889],
+                '六联社区':[114.332971,22.795219],
+                '田头社区':[114.410837,22.697197],
+                '碧岭社区':[114.295663,22.673420],
+                '沙湖社区':[114.326552,22.679090],
+                '田心社区':[114.421943,22.700351],
+                '六和社区':[114.349914,22.707919],
+                '竹坑社区':[114.395074,22.715773],
+                '老坑社区':[114.369312,22.734866],
+                '坑梓社区':[114.390013,22.753031],
+                '和平社区':[114.355104,22.697106],
+                '石井社区':[114.380351,22.691512],
+                '南布社区':[114.375607,22.705340],
+                '金沙社区':[114.406008,22.750790],
+                '龙田社区':[114.372841,22.753346],
+                '沙田社区':[114.397931,22.755905],
+                '秀新社区':[114.375980,22.740890]
+            };
+
+            var convertData = function (data) {
+                var res = [];
+                for (var i = 0; i < data.length; i++) {
+                    var geoCoord = geoCoordMap[data[i].name];
+                    if (geoCoord) {
+                        res.push({
+                            name: data[i].name,
+                            value: geoCoord.concat(data[i].value)
+                        });
+                    }
+                }
+                return res;
+            };
+
+            option = {
+                title: {
+                    text: '热点社区',
+                    subtext: '',
+                    sublink: '',
+                    left: 'center'
+                },
+                tooltip : {
+                    show:true,
+                    trigger: 'item',
+                    formatter:function(data){
+                        return(data.name+':'+data.value[2]);
+                    }
+                },
+                bmap: {
+                    center: [114.362640, 22.737439],//地图中心
+                    zoom: 12,//缩放等级
+                    roam: true,
+                },
+                series : [
+                    {
+                        name: '',
+                        type: 'effectScatter',
+                        coordinateSystem: 'bmap',
+                        data: convertData(data.sort(function (a, b) {
+                            return b.value - a.value;
+                        }).slice(0, 24)),
+                        symbolSize: function (val) {
+                            return val[2] / 20;
+                        },
+                        showEffectOn: 'render',
+                        rippleEffect: {
+                            brushType: 'stroke'
+                        },
+                        hoverAnimation: true,
+                        label: {
+                            normal: {
+                                formatter: '{b}',
+                                position: 'right',
+                                show: true
+                            }
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: 'purple',
+                                shadowBlur: 10,
+                                shadowColor: '#333'
+                            }
+                        },
+                        zlevel: 1
+                    }
+                ]
+            };;
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+       </script>
+        {% if need_refresh==1 %}
+            <script language="javascript">
+            var interval;
+            function aa(){
+                window.location.reload();
+            }
+            interval = window.setInterval("aa()",20000);////隔多少毫秒刷新一次整个页面, 还未改成局部刷新
+            </script>
+        {% endif %}</div>
+<!--                          主体结束-->
+					  </div>
+					</div>
+				</div>
+			</div>
+			<!--遮罩-->
+			<div class="main-mask">
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			var scope={
+				link:'./welcome.html'
+			}
+		</script>
+		<script src="/static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/static/admin/js/main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>
+
+<script type="text/javascript">
+    var area = document.getElementById('moocBox');
+    var con1 = document.getElementById('con1');
+    var con2 = document.getElementById('con2');
+    var speed = 50;
+    area.scrollTop = 0;
+    con2.innerHTML = con1.innerHTML;
+    function scrollUp(){
+        if(area.scrollTop >= con1.scrollHeight) {
+            area.scrollTop = 0;
+        }else{
+            area.scrollTop ++; //向上滚动
+        }
+    }
+    var myScroll = setInterval("scrollUp()",speed);
+    area.onmouseover = function(){
+        clearInterval(myScroll);
+    }
+    area.onmouseout = function(){
+        myScroll = setInterval("scrollUp()",speed);
+    }
+</script>

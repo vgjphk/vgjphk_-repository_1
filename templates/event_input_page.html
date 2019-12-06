@@ -1,0 +1,2590 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="static/admin/layui/css/layui.css"/>
+        <link rel="stylesheet" type="text/css" href="static/admin/css/admin.css"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/layui/css/layui.css') }}"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='admin/css/admin.css') }}"/>
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/home2.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="home2.css">
+		<script src="http://img.jb51.net/jslib/jquery/jquery.js" type="text/javascript"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<script type="text/javascript">function fnature() {
+        document.getElementById('inature').value=document.getElementById('iinature').value;
+    }
+
+    function fprogress() {
+        document.getElementById('iprogress').value=document.getElementById('iiprogress').value;
+    }
+
+    function fway() {
+        document.getElementById('iway').value=document.getElementById('iiway').value;
+    }
+
+    $(document).ready(function(){
+            $("#street").change(function(){
+                $("#street option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".community").hide();
+                        $(".community").eq(i).show();
+
+                        $(".department").hide();
+                        $(".department").eq(i).show();
+                    }
+                });
+            });
+            $("#street").change();
+            $("#types").change(function(){
+                $("#types option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".big_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".big_type").eq(i).show();
+                        $(".tiny_type").show();
+                    }
+                });
+            });
+            $("#types").change();
+            $("#iibigtype1").change(function(){
+                $("#iibigtype1 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type1").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype2").change(function(){
+                $("#iibigtype2 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type2").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype3").change(function(){
+                $("#iibigtype3 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type3").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype4").change(function(){
+                $("#iibigtype4 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type4").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype5").change(function(){
+                $("#iibigtype5 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type5").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype6").change(function(){
+                $("#iibigtype6 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type6").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype7").change(function(){
+                $("#iibigtype7 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type7").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype8").change(function(){
+                $("#iibigtype8 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type8").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype9").change(function(){
+                $("#iibigtype9 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type9").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype10").change(function(){
+                $("#iibigtype10 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type10").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype11").change(function(){
+                $("#iibigtype11 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type11").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype12").change(function(){
+                $("#iibigtype12 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type12").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype13").change(function(){
+                $("#iibigtype13 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type13").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype14").change(function(){
+                $("#iibigtype14 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type14").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype15").change(function(){
+                $("#iibigtype15 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type15").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype16").change(function(){
+                $("#iibigtype16 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type16").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype17").change(function(){
+                $("#iibigtype17 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type17").eq(i-1).show();
+                    }
+                });
+            });
+            $("#iibigtype18").change(function(){
+                $("#iibigtype18 option").each(function(i,o){
+                    if($(this).attr("selected"))
+                    {
+                        $(".tiny_type").hide();
+                        $(".tiny_type1").hide();
+                        $(".tiny_type2").hide();
+                        $(".tiny_type3").hide();
+                        $(".tiny_type4").hide();
+                        $(".tiny_type5").hide();
+                        $(".tiny_type6").hide();
+                        $(".tiny_type7").hide();
+                        $(".tiny_type8").hide();
+                        $(".tiny_type9").hide();
+                        $(".tiny_type10").hide();
+                        $(".tiny_type11").hide();
+                        $(".tiny_type12").hide();
+                        $(".tiny_type13").hide();
+                        $(".tiny_type14").hide();
+                        $(".tiny_type15").hide();
+                        $(".tiny_type16").hide();
+                        $(".tiny_type17").hide();
+                        $(".tiny_type18").hide();
+                        $(".tiny_type18").eq(i-1).show();
+                    }
+                });
+            });
+        });
+        function fstreet(){
+            // if(document.getElementById('street').value === "请输入所属街道"){
+            //     alert("请输入所属街道");
+            // }
+            // else{
+                document.getElementById('istreet').value=document.getElementById('street').value;
+            // }
+        }
+        function fa() {
+            document.getElementById('iarea').value=document.getElementById('area').value;
+        }
+        function fcommunity1(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity1').value;
+        }
+        function fcommunity2(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity2').value;
+        }
+        function fcommunity3(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity3').value;
+        }
+        function fcommunity4(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity4').value;
+        }
+        function fcommunity5(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity5').value;
+        }
+        function fcommunity6(){
+                document.getElementById('icommunity').value=document.getElementById('iicommunity6').value;
+        }
+        function fdepartment1() {
+            document.getElementById('idepartment').value=document.getElementById('iidepartment1').value;
+        }
+        function fdepartment2() {
+            document.getElementById('idepartment').value=document.getElementById('iidepartment2').value;
+        }
+        function fdepartment3() {
+            document.getElementById('idepartment').value=document.getElementById('iidepartment3').value;
+        }
+        function fdepartment4() {
+            document.getElementById('idepartment').value=document.getElementById('iidepartment4').value;
+        }
+        function fdepartment5() {
+            document.getElementById('idepartment').value=document.getElementById('iidepartment5').value;
+        }
+        function fdepartment6() {
+            document.getElementById('idepartment').value=document.getElementById('iidepartment6').value;
+        }
+        function ftypes() {
+            document.getElementById('itypes').value=document.getElementById('types').value;
+        }
+        function ftype1(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype1').value;
+        }
+        function ftype2(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype2').value;
+        }
+        function ftype3(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype3').value;
+        }
+        function ftype4(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype4').value;
+        }
+        function ftype5(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype5').value;
+        }
+        function ftype6(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype6').value;
+        }
+        function ftype7(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype7').value;
+        }
+        function ftype8(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype8').value;
+        }
+        function ftype9(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype9').value;
+        }
+        function ftype10(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype10').value;
+        }
+        function ftype11(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype11').value;
+        }
+        function ftype12(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype12').value;
+        }
+        function ftype13(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype13').value;
+        }
+        function ftype14(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype14').value;
+        }
+        function ftype15(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype15').value;
+        }
+        function ftype16(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype16').value;
+        }
+        function ftype17(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype17').value;
+        }
+        function ftype18(){
+                document.getElementById('big_type').value=document.getElementById('iibigtype18').value;
+        }
+        function ftinytype1_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_1').value;
+        }
+        function ftinytype1_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_2').value;
+        }
+        function ftinytype1_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_3').value;
+        }
+        function ftinytype1_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_4').value;
+        }
+        function ftinytype1_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_5').value;
+        }
+        function ftinytype1_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_6').value;
+        }
+        function ftinytype1_7(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_7').value;
+        }
+        function ftinytype1_8(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_8').value;
+        }
+        function ftinytype1_9(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_9').value;
+        }
+        function ftinytype1_10(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_10').value;
+        }
+        function ftinytype1_11(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype1_11').value;
+        }
+        function ftinytype2_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_1').value;
+        }
+        function ftinytype2_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_2').value;
+        }
+        function ftinytype2_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_3').value;
+        }
+        function ftinytype2_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_4').value;
+        }
+        function ftinytype2_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_5').value;
+        }
+        function ftinytype2_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_6').value;
+        }
+        function ftinytype2_7(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_7').value;
+        }
+        function ftinytype2_8(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_8').value;
+        }
+        function ftinytype2_9(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_9').value;
+        }
+        function ftinytype2_10(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_10').value;
+        }
+        function ftinytype2_11(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_11').value;
+        }
+        function ftinytype2_12(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_12').value;
+        }
+        function ftinytype2_13(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_13').value;
+        }
+        function ftinytype2_14(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_14').value;
+        }
+        function ftinytype2_15(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_15').value;
+        }
+        function ftinytype2_16(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_16').value;
+        }
+        function ftinytype2_17(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_17').value;
+        }
+        function ftinytype2_18(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_18').value;
+        }
+        function ftinytype2_19(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_19').value;
+        }
+        function ftinytype2_20(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_20').value;
+        }
+        function ftinytype2_21(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_21').value;
+        }
+        function ftinytype2_22(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype2_22').value;
+        }
+        function ftinytype3_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype3_1').value;
+        }
+        function ftinytype3_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype3_2').value;
+        }
+        function ftinytype3_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype3_3').value;
+        }
+        function ftinytype3_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype3_4').value;
+        }
+        function ftinytype3_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype3_5').value;
+        }
+        function ftinytype3_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype3_6').value;
+        }
+        function ftinytype4_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_1').value;
+        }
+        function ftinytype4_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_2').value;
+        }
+        function ftinytype4_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_3').value;
+        }
+        function ftinytype4_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_4').value;
+        }
+        function ftinytype4_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_5').value;
+        }
+        function ftinytype4_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_6').value;
+        }
+        function ftinytype4_7(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_7').value;
+        }
+        function ftinytype4_8(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_8').value;
+        }
+        function ftinytype4_9(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_9').value;
+        }
+        function ftinytype4_10(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_10').value;
+        }
+        function ftinytype4_11(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_11').value;
+        }
+        function ftinytype4_12(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype4_12').value;
+        }
+        function ftinytype5_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_1').value;
+        }
+        function ftinytype5_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_2').value;
+        }
+        function ftinytype5_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_3').value;
+        }
+        function ftinytype5_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_4').value;
+        }
+        function ftinytype5_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_5').value;
+        }
+        function ftinytype5_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_6').value;
+        }
+        function ftinytype5_7(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_7').value;
+        }
+        function ftinytype5_8(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_8').value;
+        }
+        function ftinytype5_9(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_9').value;
+        }
+        function ftinytype5_10(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_10').value;
+        }
+        function ftinytype5_11(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_11').value;
+        }
+        function ftinytype5_12(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_12').value;
+        }
+        function ftinytype5_13(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_13').value;
+        }
+        function ftinytype5_14(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype5_14').value;
+        }
+        function ftinytype6_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_1').value;
+        }
+        function ftinytype6_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_2').value;
+        }
+        function ftinytype6_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_3').value;
+        }
+        function ftinytype6_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_4').value;
+        }
+        function ftinytype6_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_5').value;
+        }
+        function ftinytype6_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_6').value;
+        }
+        function ftinytype6_7(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_7').value;
+        }
+        function ftinytype6_8(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_8').value;
+        }
+        function ftinytype6_9(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_9').value;
+        }
+        function ftinytype6_10(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_10').value;
+        }
+        function ftinytype6_11(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_11').value;
+        }
+        function ftinytype6_12(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype6_12').value;
+        }
+        function ftinytype7_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype7_1').value;
+        }
+        function ftinytype7_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype7_2').value;
+        }
+        function ftinytype7_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype7_3').value;
+        }
+        function ftinytype7_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype7_4').value;
+        }
+        function ftinytype8_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype8_1').value;
+        }
+        function ftinytype8_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype8_2').value;
+        }
+        function ftinytype9_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype9_1').value;
+        }
+        function ftinytype9_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype9_2').value;
+        }
+        function ftinytype9_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype9_3').value;
+        }
+        function ftinytype10_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype10_1').value;
+        }
+        function ftinytype10_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype10_2').value;
+        }
+        function ftinytype10_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype10_3').value;
+        }
+        function ftinytype10_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype10_4').value;
+        }
+        function ftinytype11_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype11_1').value;
+        }
+        function ftinytype11_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype11_2').value;
+        }
+        function ftinytype11_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype11_3').value;
+        }
+        function ftinytype11_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype11_4').value;
+        }
+        function ftinytype12_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_1').value;
+        }
+        function ftinytype12_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_2').value;
+        }
+        function ftinytype12_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_3').value;
+        }
+        function ftinytype12_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_4').value;
+        }
+        function ftinytype12_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_5').value;
+        }
+        function ftinytype12_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_6').value;
+        }
+        function ftinytype12_7(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_7').value;
+        }
+        function ftinytype12_8(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_8').value;
+        }
+        function ftinytype12_9(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_9').value;
+        }
+        function ftinytype12_10(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype12_10').value;
+        }
+        function ftinytype13_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype13_1').value;
+        }
+        function ftinytype13_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype13_2').value;
+        }
+        function ftinytype13_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype13_3').value;
+        }
+        function ftinytype14_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype14_1').value;
+        }
+        function ftinytype15_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype15_1').value;
+        }
+        function ftinytype15_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype15_2').value;
+        }
+        function ftinytype15_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype15_3').value;
+        }
+        function ftinytype15_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype15_4').value;
+        }
+        function ftinytype15_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype15_5').value;
+        }
+        function ftinytype16_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype16_1').value;
+        }
+        function ftinytype16_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype16_2').value;
+        }
+        function ftinytype16_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype16_3').value;
+        }
+        function ftinytype16_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype16_4').value;
+        }
+        function ftinytype17_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_1').value;
+        }
+        function ftinytype17_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_2').value;
+        }
+        function ftinytype17_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_3').value;
+        }
+        function ftinytype17_4(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_4').value;
+        }
+        function ftinytype17_5(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_5').value;
+        }
+        function ftinytype17_6(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_6').value;
+        }
+        function ftinytype17_7(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_7').value;
+        }
+        function ftinytype17_8(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_8').value;
+        }
+        function ftinytype17_9(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_9').value;
+        }
+        function ftinytype17_10(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_10').value;
+        }
+        function ftinytype17_11(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_11').value;
+        }
+        function ftinytype17_12(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_12').value;
+        }
+        function ftinytype17_13(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_13').value;
+        }
+        function ftinytype17_14(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype17_14').value;
+        }
+        function ftinytype18_1(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype18_1').value;
+        }
+        function ftinytype18_2(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype18_2').value;
+        }
+        function ftinytype18_3(){
+            document.getElementById('itinytype').value=document.getElementById('iitinytype18_3').value;
+        }
+    </script>
+        <title>事件输入</title>
+	</head>
+	<body>
+		<div class="main-layout" id='main-layout'>
+			<!--侧边栏-->
+			<div class="main-layout-side">
+				<div class="m-logo">
+				</div>
+				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+				  <li class="layui-nav-item layui-nav-itemed">
+				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>主页</a>
+				    <dl class="layui-nav-child">
+				      <dd><a href="http://127.0.0.1:5000/home/" data-text="异常事件" title="异常事件"><span class="l-line"></span>异常报警</a></dd>
+				      <dd><a href="http://127.0.0.1:5000/home/zdy" data-text="自定义异常事件"  title="自定义异常事件"><span class="l-line"></span>自定义异常事件</a></dd>
+				    </dl>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/jrms/" data-text="今日民生" title="今日民生"><i class="iconfont">&#xe604;</i>今日民生</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/mssj/" data-text="民生事件情况" title="民生事件情况"><i class="iconfont">&#xe60c;</i>民生事件情况</a>
+				  </li>
+				   <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/sjjb/" data-text="事件结办分析" title="事件结办分析"><i class="iconfont">&#xe60a;</i>事件结办分析</a>
+				  </li>
+				  <li class="layui-nav-item">
+				    <a href="http://127.0.0.1:5000/rdsq/" data-text="热点社区分析" title="热点社区分析"><i class="iconfont">&#xe603;</i>热点社区分析</a>
+				  </li>
+					<li class="layui-nav-item layui-nav-itemed">
+					<a href="javascript:;"><i class="iconfont">&#xe607;</i>个人中心</a>
+					<dl class="layui-nav-child">
+						<dd><a href="http://127.0.0.1:5000/search/" data-text="事件进度查询" title="事件进度查询"><span class="l-line"></span>事件进度查询</a></dd>
+					  	<dd><a href="http://127.0.0.1:5000/event_input/" data-text="事件输入" title="事件输入"><span class="l-line"></span>事件输入</a></dd>
+						<dd><a href="http://127.0.0.1:5000/progress_update/" data-text="事件进度更新" title="事件进度更新"><span class="l-line"></span>事件进度更新</a></dd>
+					  <dd><a href="http://127.0.0.1:5000/logout" data-text="登出"  title="登出"><span class="l-line"></span>登出</a></dd>
+					</dl>
+				  </li>
+				</ul>
+			</div>
+			<!--右侧内容-->
+			<div class="main-layout-container">
+				<!--头部-->
+				<div class="main-layout-header">
+					<div class="menu-btn" id="hideBtn">
+						<a href="javascript:;">
+							<span class="iconfont">&#xe60e;</span>
+						</a>
+					</div>
+				</div>
+				<!--主体内容-->
+				<div class="main-layout-body">
+					<!--tab 切换-->
+					<div class="layui-tab layui-tab-brief main-layout-tab" lay-filter="tab" lay-allowClose="true">
+					  <ul class="layui-tab-title">
+					    <li class="layui-this welcome">事件输入</li>
+					  </ul>
+					  <div class="layui-tab-content">
+<!--                          主体-->
+<form method="post" style="position:absolute;left:10%;top:20%;font-size:18px">
+    <input type="text" name="num" placeholder="请输入编号"/><br>
+    <input type="text" name="date"  placeholder="请输入日期"/><br>
+    <input type="text" name="area" id ="iarea"  placeholder="请输入所属区域">
+    <select id ="area"onchange="fa()" style="width:240px">
+        <option>请输入所属区域</option>
+        <option>坪山区</option>
+    </select>
+    <br>
+    <input type="text" name="street" id="istreet" placeholder="请输入所属街道"/>
+    <select id="street" onchange="fstreet()" style="width:240px">
+        <option>请输入所属街道
+        <option>龙田街道
+        <option>坪山街道
+        <option>碧岭街道
+        <option>坑梓街道
+        <option>马峦街道
+        <option>石井街道
+    </select>
+    <br>
+    <input type="text" name="community" id="icommunity" placeholder="请输入所属社区"/>
+    <select class="community" id="iicommunity0" style="width:240px">
+        <option>请输入所属社区
+    </select>
+    <select class="community" id="iicommunity1" onchange="fcommunity1()" style="width:240px">
+        <option>请选择</option>
+        <option>南布社区</option>
+        <option>老坑社区</option>
+        <option>竹坑社区</option>
+        <option>龙田社区</option>
+    </select>
+    <select class="community" id="iicommunity2" onchange="fcommunity2()" style="width:240px">
+        <option>请选择</option>
+        <option>和平社区</option>
+        <option>坪山社区</option>
+        <option>六和社区</option>
+        <option>六联社区</option>
+    </select>
+    <select class="community" id="iicommunity3" onchange="fcommunity3()" style="width:240px">
+        <option>请选择</option>
+        <option>汤坑社区</option>
+        <option>沙湖社区</option>
+        <option>碧岭社区</option>
+    </select>
+    <select class="community" id="iicommunity4" onchange="fcommunity4()" style="width:240px">
+        <option>请选择</option>
+        <option>金沙社区</option>
+        <option>秀新社区</option>
+        <option>沙田社区</option>
+        <option>坑梓社区</option>
+    </select>
+    <select class="community" id="iicommunity5" onchange="fcommunity5()" style="width:240px">
+        <option>请选择</option>
+        <option>江岭社区</option>
+        <option>坪环社区</option>
+        <option>沙坣社区</option>
+        <option>马峦社区</option>
+    </select>
+    <select class="community" id="iicommunity6" onchange="fcommunity6()" style="width:240px">
+        <option>请选择</option>
+        <option>石井社区</option>
+        <option>田头社区</option>
+        <option>田心社区</option>
+        <option>金龟社区</option>
+    </select><br>
+    <input type="text" name="types" id="itypes" placeholder="请输入问题类型"/>
+    <select id="types" onchange="ftypes()" style="width:240px">
+        <option>请输入问题类型
+        <option>市容环卫
+        <option>环保水务
+        <option>市政设施
+        <option>规土城建
+        <option>教育卫生
+        <option>安全隐患
+        <option>组织人事
+        <option>党纪政纪
+        <option>劳动社保
+        <option>社区管理
+        <option>交通运输
+        <option>治安维稳
+        <option>专业事件采集
+        <option>统一战线
+        <option>民政服务
+        <option>文体旅游
+        <option>食药市监
+        <option>党建群团
+    </select>
+    <br>
+    <input type="text" name="big_type" id="big_type" placeholder="请输入大类名称"/>
+    <select class="big_type" id="iibigtype0" style="width:240px">
+        <option>请输入大类名称
+    </select>
+    <select class="big_type" id="iibigtype1" onchange="ftype1()" style="width:240px">
+        <option>请选择</option>
+        <option>市容城管</option>
+        <option>宣传广告违法行为</option>
+        <option>占道经营</option>
+        <option>垃圾问题</option>
+        <option>绿化养护</option>
+        <option>废弃物堆放</option>
+        <option>车辆乱停放</option>
+        <option>道路保洁</option>
+        <option>其他市容违法行为或影响市容事件</option>
+        <option>渣土问题</option>
+        <option>公共设施保洁</option>
+    </select>
+    <select class="big_type" id="iibigtype2" onchange="ftype2()" style="width:240px">
+        <option>请选择</option>
+        <option>禽畜养殖污染</option>
+        <option>商业经营噪声</option>
+        <option>工业噪声</option>
+        <option>社会生活噪声</option>
+        <option>水污染</option>
+        <option>建筑施工噪声</option>
+        <option>供、排水及水质问题</option>
+        <option>扬尘污染</option>
+        <option>营业性文化娱乐噪声</option>
+        <option>工业、住宅废气扰民</option>
+        <option>服务行业废气扰民</option>
+        <option>交通运输噪声</option>
+        <option>环保标志管理</option>
+        <option>环保管理</option>
+        <option>面源污染隐患</option>
+        <option>野生资源管理</option>
+        <option>生态破坏</option>
+        <option>危险废物、化学品污染</option>
+        <option>固体废物</option>
+        <option>小散乱污</option>
+        <option>核安全</option>
+        <option>跨河桥、河堤、河道破损</option>
+    </select>
+    <select class="big_type" id="iibigtype3" onchange="ftype3()" style="width:240px">
+        <option>请选择</option>
+        <option>市政、公共设施设置及维护</option>
+        <option>公用部件</option>
+        <option>交通设施</option>
+        <option>道路设施</option>
+        <option>环卫设施设置及维护</option>
+        <option>城市公共资源管理</option>
+    </select>
+    <select class="big_type" id="iibigtype4" onchange="ftype4()" style="width:240px">
+        <option>请选择</option>
+        <option>城乡规划</option>
+        <option>房屋征收</option>
+        <option>城市建设和市政管理</option>
+        <option>违法建筑与用地行为</option>
+        <option>住房保障和房地产</option>
+        <option>集体土地上房屋拆迁与补偿</option>
+        <option>土地资源管理</option>
+        <option>建筑市场</option>
+        <option>国有土地上房屋征收与补偿</option>
+        <option>建筑设计</option>
+        <option>征转地审批</option>
+        <option>建筑安装</option>
+    </select>
+    <select class="big_type" id="iibigtype5" onchange="ftype5()" style="width:240px">
+        <option>请选择</option>
+        <option>教育行政管理</option>
+        <option>医患纠纷</option>
+        <option>医政监管</option>
+        <option>招生中的违法行为</option>
+        <option>教育体制</option>
+        <option>教育收费</option>
+        <option>违反计生政策</option>
+        <option>医疗机构违规经营</option>
+        <option>教学违规</option>
+        <option>医疗机构违规收费</option>
+        <option>文化</option>
+        <option>公共卫生</option>
+        <option>教师队伍和待遇</option>
+        <option>人口计生</option>
+    </select>
+    <select class="big_type" id="iibigtype6" onchange="ftype6()" style="width:240px">
+        <option>请选择</option>
+        <option>道路交通安全</option>
+        <option>建设工程质量</option>
+        <option>其他公共安全隐患</option>
+        <option>消防设施安全</option>
+        <option>建筑消防安全</option>
+        <option>危险化学品安全</option>
+        <option>线路消防安全</option>
+        <option>地质安全</option>
+        <option>安全生产</option>
+        <option>燃气安全</option>
+        <option>校园安全</option>
+        <option>更改房屋结构</option>
+    </select>
+    <select class="big_type" id="iibigtype7" onchange="ftype7()" style="width:240px">
+        <option>请选择</option>
+        <option>人力资源</option>
+        <option>军转安置</option>
+        <option>招录辞退</option>
+        <option>编制职务</option>
+    </select>
+    <select class="big_type" id="iibigtype8" onchange="ftype8()" style="width:240px">
+        <option>请选择</option>
+        <option>行政效能</option>
+        <option>工作纪律</option>
+    </select>
+    <select class="big_type" id="iibigtype9" onchange="ftype9()" style="width:240px">
+        <option>请选择</option>
+        <option>劳动就业</option>
+        <option>劳动社保</option>
+        <option>劳动保护</option>
+    </select>
+    <select class="big_type" id="iibigtype10" onchange="ftype10()" style="width:240px">
+        <option>请选择</option>
+        <option>住宅区（园区）或建筑物内安全、环卫问题</option>
+        <option>物业服务管理监督</option>
+        <option>社区公共管理</option>
+        <option>社区建设</option>
+    </select>
+    <select class="big_type" id="iibigtype11" onchange="ftype11()" style="width:240px">
+        <option>请选择</option>
+        <option>公共交通管理</option>
+        <option>道路规划建设</option>
+        <option>交通管理</option>
+        <option>网约车管理</option>
+    </select>
+    <select class="big_type" id="iibigtype12" onchange="ftype12()" style="width:240px">
+        <option>请选择</option>
+        <option>经济纠纷</option>
+        <option>人口房屋</option>
+        <option>社会治安</option>
+        <option>户籍证件</option>
+        <option>警务督察</option>
+        <option>经济管理</option>
+        <option>表达情感</option>
+        <option>刑案侦破</option>
+        <option>普法教育</option>
+        <option>民间纠纷</option>
+    </select>
+    <select class="big_type" id="iibigtype13" onchange="ftype13()" style="width:240px">
+        <option>请选择</option>
+        <option>综合事件采集</option>
+        <option>食药监问题</option>
+        <option>卫生问题</option>
+    </select>
+    <select class="big_type" id="iibigtype14" onchange="ftype14()" style="width:240px">
+        <option>请选择</option>
+        <option>工商经济联络</option>
+    </select>
+    <select class="big_type" id="iibigtype15" onchange="ftype15()" style="width:240px">
+        <option>请选择</option>
+        <option>双拥优抚</option>
+        <option>福利慈善</option>
+        <option>社会组织</option>
+        <option>社会救助</option>
+        <option>复退安置</option>
+    </select>
+    <select class="big_type" id="iibigtype16" onchange="ftype16()" style="width:240px">
+        <option>请选择</option>
+        <option>宣传舆论</option>
+        <option>体育</option>
+        <option>旅游市场管理</option>
+        <option>文化市场违法行为</option>
+    </select>
+    <select class="big_type" id="iibigtype17" onchange="ftype17()" style="width:240px">
+        <option>请选择</option>
+        <option>互联网与通讯</option>
+        <option>药品（医疗器械）监管</option>
+        <option>消费维权</option>
+        <option>无证无照经营</option>
+        <option>质监检验检疫</option>
+        <option>商标管理</option>
+        <option>经济违法行为举报</option>
+        <option>出入境检验检疫</option>
+        <option>价格监管</option>
+        <option>食品安全</option>
+        <option>科学技术</option>
+        <option>信息化建设</option>
+        <option>知识产权</option>
+        <option>市场垄断</option>
+    </select>
+    <select class="big_type" id="iibigtype18" onchange="ftype18()" style="width:240px">
+        <option>请选择</option>
+        <option>党的建设</option>
+        <option>义工联</option>
+        <option>宣传教育</option>
+    </select><br>
+    <input type="text" name="tiny_type" id="itinytype" placeholder="请输入小类名称"/>
+    <select class="tiny_type" id="iitinytype0" onchange="ftinytype0()" style="width:240px">
+        <option>请输入小类名称
+    </select>
+    <select class="tiny_type1" id="iitinytype1_1" onchange="ftinytype1_1()" style="width:240px">
+        <option>请选择</option>
+        <option>市容环卫</option>
+        <option>城市管理</option>
+        <option>乱摆卖</option>
+        <option>违法建设</option>
+        <option>综合执法</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_2" onchange="ftinytype1_2()" style="width:240px">
+        <option>请选择</option>
+        <option>悬挂横幅标语、</option>
+        <option>未经批准设置广告牌</option>
+        <option>广告牌匾</option>
+        <option>街头张贴广告</option>
+        <option>广告招牌破损</option>
+        <option>街头散发小广告</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_3" onchange="ftinytype1_3()" style="width:240px">
+        <option>请选择</option>
+        <option>无照经营游商</option>
+        <option>店外经营</option>
+        <option>占道废品收购</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_4" onchange="ftinytype1_4()" style="width:240px">
+        <option>请选择</option>
+        <option>暴露垃圾</option>
+        <option>门店外扫垃圾</option>
+        <option>乱丢乱吐</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_5" onchange="ftinytype1_5()" style="width:240px">
+        <option>请选择</option>
+        <option>行道树倒压占路</option>
+        <option>公共绿地养护</option>
+        <option>绿化带养护</option>
+        <option>树木养护</option>
+        <option>绿地保洁</option>
+        <option>绿地设施维护</option>
+        <option>行道树</option>
+        <option>绿地</option>
+        <option>其它园林绿化管理问题</option>
+        <option>私自砍伐、迁移城市树木</option>
+        <option>绿地护栏</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_6" onchange="ftinytype1_6()" style="width:240px">
+        <option>请选择</option>
+        <option>住宅区域内废弃家具设备</option>
+        <option>其他区域堆放施工废弃料</option>
+        <option>废弃车辆</option>
+        <option>住宅区域内堆放施工废弃料</option>
+        <option>其他区域废弃家具</option>
+        <option>动物尸体清理</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_7" onchange="ftinytype1_7()" style="width:240px">
+        <option>请选择</option>
+        <option>机动车乱停放</option>
+        <option>非机动车乱停放</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_8" onchange="ftinytype1_8()" style="width:240px">
+        <option>请选择</option>
+        <option>道路遗撒</option>
+        <option>道路保洁</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_9" onchange="ftinytype1_9()" style="width:240px">
+        <option>请选择</option>
+        <option>乱堆物堆料</option>
+        <option>施工占道</option>
+        <option>露天烧烤</option>
+        <option>擅自饲养家禽家畜</option>
+        <option>蚊蝇孳生</option>
+        <option>其他市容环境问题</option>
+        <option>沿街晾挂</option>
+        <option>其它宣传广告问题</option>
+        <option>私搭乱建</option>
+        <option>沿街门面装修</option>
+        <option>非装饰性树挂</option>
+        <option>其它无证经营</option>
+        <option>乱堆物堆料、沿街晾挂</option>
+        <option>未经批准燃放烟花爆竹</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_10" onchange="ftinytype1_10()" style="width:240px">
+        <option>请选择</option>
+        <option>积存垃圾渣土</option>
+        <option>公共场所渣土倾倒</option>
+        <option>国有土地渣土倾倒</option>
+    </select>
+    <select class="tiny_type1" id="iitinytype1_11" onchange="ftinytype1_11()" style="width:240px">
+        <option>请选择</option>
+        <option>路灯杆、街边建筑等乱张贴</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_1" onchange="ftinytype2_1()" style="width:240px">
+        <option>请选择</option>
+        <option>饲养宠物家禽扰民</option>
+        <option>养殖废气</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_2" onchange="ftinytype2_2()" style="width:240px">
+        <option>请选择</option>
+        <option>商业经营红线内噪声</option>
+        <option>商业经营红线外噪声</option>
+        <option>噪音设施安装</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_3" onchange="ftinytype2_3()" style="width:240px">
+        <option>请选择</option>
+        <option>工业红线内噪声</option>
+        <option>工业红线外噪声</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_4" onchange="ftinytype2_4()" style="width:240px">
+        <option>请选择</option>
+        <option>公共场所噪声</option>
+        <option>假日住宅楼噪声</option>
+        <option>宠物扰民</option>
+        <option>敏感区域卸货</option>
+        <option>室内噪声</option>
+        <option>空调噪声</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_5" onchange="ftinytype2_5()" style="width:240px">
+        <option>请选择</option>
+        <option>生活污水乱排放</option>
+        <option>道路污水</option>
+        <option>生活污水集污沟渠裸露黑臭</option>
+        <option>河道污染</option>
+        <option>地下管道堵塞</option>
+        <option>工业污水偷排直排</option>
+        <option>非公共区域违规排污</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_6" onchange="ftinytype2_6()" style="width:240px">
+        <option>请选择</option>
+        <option>施工噪音</option>
+        <option>超时施工</option>
+        <option>建筑运输噪声</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_7" onchange="ftinytype2_7()" style="width:240px">
+        <option>请选择</option>
+        <option>下水道堵塞或破损</option>
+        <option>供水设施故障</option>
+        <option>自来水水质发黄等水质问题</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_8" onchange="ftinytype2_8()" style="width:240px">
+        <option>请选择</option>
+        <option>社会投资建设工地施工扬尘</option>
+        <option>房屋拆除、建设扬尘</option>
+        <option>公共场所扬尘</option>
+        <option>市政工程扬尘</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_9" onchange="ftinytype2_9()" style="width:240px">
+        <option>请选择</option>
+        <option>文化娱乐红线外噪声</option>
+        <option>未许可经营噪声</option>
+        <option>文化娱乐红线内噪声</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_10" onchange="ftinytype2_10()" style="width:240px">
+        <option>请选择</option>
+        <option>工业废气</option>
+        <option>住宅废气</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_11" onchange="ftinytype2_11()" style="width:240px">
+        <option>请选择</option>
+        <option>油烟污染</option>
+        <option>垃圾处理场臭味扰民</option>
+        <option>非指定场所焚烧垃圾产生气味及烟雾</option>
+        <option>服务行业经营废气</option>
+        <option>垃圾臭味扰民</option>
+        <option>焚烧垃圾、树叶</option>
+        <option>机动车尾气超标</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_12" onchange="ftinytype2_12()" style="width:240px">
+        <option>请选择</option>
+        <option>机动车噪声</option>
+        <option>交通设施噪声</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_13" onchange="ftinytype2_13()" style="width:240px">
+        <option>请选择</option>
+        <option>环保标志管理</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_14" onchange="ftinytype2_14()" style="width:240px">
+        <option>请选择</option>
+        <option>环境监测</option>
+        <option>环境执法</option>
+        <option>生态示范和模范城区创建</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_15" onchange="ftinytype2_15()" style="width:240px">
+        <option>请选择</option>
+        <option>工业垃圾堆放</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_16" onchange="ftinytype2_16()" style="width:240px">
+        <option>请选择</option>
+        <option>其他野生资源管理</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_17" onchange="ftinytype2_17()" style="width:240px">
+        <option>请选择</option>
+        <option>野生动、植物病虫害</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_18" onchange="ftinytype2_18()" style="width:240px">
+        <option>请选择</option>
+        <option>其他污染</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_19" onchange="ftinytype2_19()" style="width:240px">
+        <option>请选择</option>
+        <option>固体废物</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_20" onchange="ftinytype2_20()" style="width:240px">
+        <option>请选择</option>
+        <option>小散乱污企业</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_21" onchange="ftinytype2_21()" style="width:240px">
+        <option>请选择</option>
+        <option>核安全</option>
+    </select>
+    <select class="tiny_type2" id="iitinytype2_22" onchange="ftinytype2_22()" style="width:240px">
+        <option>请选择</option>
+        <option>跨河桥、河堤、河道破损</option>
+    </select>
+    <select class="tiny_type3" id="iitinytype3_1" onchange="ftinytype3_1()" style="width:240px">
+        <option>请选择</option>
+        <option>道路破损</option>
+        <option>其他施工管理问题</option>
+        <option>社区公园设施隐患</option>
+        <option>侵占绿地</option>
+        <option>无证掘路</option>
+        <option>市政公园设施隐患</option>
+        <option>道路桥梁设施隐患</option>
+    </select>
+    <select class="tiny_type3" id="iitinytype3_2" onchange="ftinytype3_2()" style="width:240px">
+        <option>请选择</option>
+        <option>自来水管破裂</option>
+        <option>通讯井盖</option>
+        <option>路灯(灯光)井盖</option>
+        <option>电力井盖</option>
+        <option>上水井盖</option>
+        <option>健身设施</option>
+        <option>下水井盖</option>
+        <option>防撞柱</option>
+        <option>电力设施故障</option>
+        <option>路灯</option>
+        <option>有线电视箱</option>
+        <option>无主井盖</option>
+        <option>消防设施</option>
+        <option>监控电子眼</option>
+        <option>环卫工具房</option>
+        <option>公安井盖</option>
+        <option>河湖堤坝</option>
+        <option>电力设施</option>
+        <option>通讯交接箱</option>
+        <option>毒鼠屋</option>
+        <option>景观灯</option>
+        <option>饰灯</option>
+        <option>治安岗亭</option>
+        <option>报刊亭</option>
+        <option>电梯</option>
+        <option>交通电子告示牌</option>
+        <option>立杆</option>
+        <option>路灯(灯光)配电箱</option>
+        <option>高压线铁塔</option>
+        <option>雨水箅子</option>
+        <option>地铁站指示牌</option>
+        <option>雨水井盖</option>
+        <option>污水井盖</option>
+        <option>燃气管道破裂</option>
+        <option>路灯&#40;灯光&#41;井盖</option>
+    </select>
+    <select class="tiny_type3" id="iitinytype3_3" onchange="ftinytype3_3()" style="width:240px">
+        <option>请选择</option>
+        <option>交通信号设施</option>
+        <option>停车场</option>
+        <option>交通信号灯</option>
+        <option>道路信息显示屏</option>
+        <option>交通岗亭</option>
+    </select>
+    <select class="tiny_type3" id="iitinytype3_4" onchange="ftinytype3_4()" style="width:240px">
+        <option>请选择</option>
+        <option>存车支架</option>
+        <option>交通标志牌</option>
+        <option>过街天桥</option>
+        <option>交通护栏</option>
+        <option>公交站亭</option>
+        <option>路名牌</option>
+        <option>道路隔音屏</option>
+        <option>高架立交桥</option>
+    </select>
+    <select class="tiny_type3" id="iitinytype3_5" onchange="ftinytype3_5()" style="width:240px">
+        <option>请选择</option>
+        <option>环卫设施不洁</option>
+        <option>公共厕所</option>
+        <option>化粪池</option>
+        <option>垃圾箱</option>
+        <option>垃圾站(楼)</option>
+        <option>环卫设施隐患</option>
+        <option>垃圾收集点</option>
+        <option>灯箱霓虹灯</option>
+    </select>
+    <select class="tiny_type3" id="iitinytype3_6" onchange="ftinytype3_6()" style="width:240px">
+        <option>请选择</option>
+        <option>乱设架空管线</option>
+        <option>道路积水</option>
+        <option>架空线缆损坏</option>
+        <option>违法收运餐厨垃圾</option>
+        <option>垃圾填埋场管理</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_1" onchange="ftinytype4_1()" style="width:240px">
+        <option>请选择</option>
+        <option>规划方案</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_2" onchange="ftinytype4_2()" style="width:240px">
+        <option>请选择</option>
+        <option>房屋征收</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_3" onchange="ftinytype4_3()" style="width:240px">
+        <option>请选择</option>
+        <option>城市公共设施</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_4" onchange="ftinytype4_4()" style="width:240px">
+        <option>请选择</option>
+        <option>违法在建建筑</option>
+        <option>违法已建建筑</option>
+        <option>规划和土地违法行为</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_5" onchange="ftinytype4_5()" style="width:240px">
+        <option>请选择</option>
+        <option>房地产</option>
+        <option>房屋安全鉴定</option>
+        <option>城中村改造</option>
+        <option>棚户区改造</option>
+        <option>权属交易</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_6" onchange="ftinytype4_6()" style="width:240px">
+        <option>请选择</option>
+        <option>房屋拆迁</option>
+        <option>安置补偿</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_7" onchange="ftinytype4_7()" style="width:240px">
+        <option>请选择</option>
+        <option>土地规划</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_8" onchange="ftinytype4_8()" style="width:240px">
+        <option>请选择</option>
+        <option>工程招投标</option>
+        <option>企业资质和执业资格</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_9" onchange="ftinytype4_9()" style="width:240px">
+        <option>请选择</option>
+        <option>审批手续</option>
+        <option>城镇危房改造</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_10" onchange="ftinytype4_10()" style="width:240px">
+        <option>请选择</option>
+        <option>建筑设计</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_11" onchange="ftinytype4_11()" style="width:240px">
+        <option>请选择</option>
+        <option>征转地审批</option>
+    </select>
+    <select class="tiny_type4" id="iitinytype4_12" onchange="ftinytype4_12()" style="width:240px">
+        <option>请选择</option>
+        <option>建筑安装</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_1" onchange="ftinytype5_1()" style="width:240px">
+        <option>请选择</option>
+        <option>教学管理</option>
+        <option>学历学位学籍管理</option>
+        <option>教育经费管理</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_2" onchange="ftinytype5_2()" style="width:240px">
+        <option>请选择</option>
+        <option>医疗事故争议</option>
+        <option>患者权益</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_3" onchange="ftinytype5_3()" style="width:240px">
+        <option>请选择</option>
+        <option>医疗技术和服务</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_4" onchange="ftinytype5_4()" style="width:240px">
+        <option>请选择</option>
+        <option>招生违法行为</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_5" onchange="ftinytype5_5()" style="width:240px">
+        <option>请选择</option>
+        <option>教育体制改革</option>
+        <option>教育统筹管理</option>
+        <option>教育资源配置</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_6" onchange="ftinytype5_6()" style="width:240px">
+        <option>请选择</option>
+        <option>教育收费</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_7" onchange="ftinytype5_7()" style="width:240px">
+        <option>请选择</option>
+        <option>政策外多孩</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_8" onchange="ftinytype5_8()" style="width:240px">
+        <option>请选择</option>
+        <option>未取医师执业证违法执业</option>
+        <option>有证药店非法行医</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_9" onchange="ftinytype5_9()" style="width:240px">
+        <option>请选择</option>
+        <option>乱收费</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_10" onchange="ftinytype5_10()" style="width:240px">
+        <option>请选择</option>
+        <option>医疗机构违规收费</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_11" onchange="ftinytype5_11()" style="width:240px">
+        <option>请选择</option>
+        <option>公共文化</option>
+        <option>文化艺术</option>
+        <option>其他</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_12" onchange="ftinytype5_12()" style="width:240px">
+        <option>请选择</option>
+        <option>无卫生许可证擅自营业</option>
+        <option>动、植物防疫</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_13" onchange="ftinytype5_13()" style="width:240px">
+        <option>请选择</option>
+        <option>工资福利</option>
+    </select>
+    <select class="tiny_type5" id="iitinytype5_14" onchange="ftinytype5_14()" style="width:240px">
+        <option>请选择</option>
+        <option>计划生育服务管理</option>
+        <option>计生执法</option>
+        <option>人口政策</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_1" onchange="ftinytype6_1()" style="width:240px">
+        <option>请选择</option>
+        <option>非机动车非法营运</option>
+        <option>指示牌及红绿灯设置</option>
+        <option>交通拥堵</option>
+        <option>机动车和驾驶员管理</option>
+        <option>道路路面塌陷、凹陷</option>
+        <option>交通事故</option>
+        <option>机动车非法营运</option>
+        <option>车行道内兜售商品</option>
+        <option>黑车拉客</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_2" onchange="ftinytype6_2()" style="width:240px">
+        <option>请选择</option>
+        <option>施工安全隐患</option>
+        <option>擅自开工建设</option>
+        <option>擅自进行改建工程</option>
+        <option>房屋质量安全隐患</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_3" onchange="ftinytype6_3()" style="width:240px">
+        <option>请选择</option>
+        <option>违规使用直排式热水器、强排式热水器</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_4" onchange="ftinytype6_4()" style="width:240px">
+        <option>请选择</option>
+        <option>消防通道堵塞</option>
+        <option>消防设备配备不全</option>
+        <option>消防设施无法正常使用</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_5" onchange="ftinytype6_5()" style="width:240px">
+        <option>请选择</option>
+        <option>人均租住建筑面积低于六平方米</option>
+        <option>墙体安全隐患</option>
+        <option>危房安全隐患</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_6" onchange="ftinytype6_6()" style="width:240px">
+        <option>请选择</option>
+        <option>易燃易爆危险品</option>
+        <option>居住场所内存放危险性物品</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_7" onchange="ftinytype6_7()" style="width:240px">
+        <option>请选择</option>
+        <option>临时线路隐患</option>
+        <option>危险用电</option>
+        <option>电动车存消防安全隐患</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_8" onchange="ftinytype6_8()" style="width:240px">
+        <option>请选择</option>
+        <option>非建筑类边坡安全隐患</option>
+        <option>路肩墙、路堤墙、路垫墙、山坡墙隐患</option>
+        <option>暗渠化河道和地下排水管渠</option>
+        <option>建筑工地存在安全隐患</option>
+        <option>危险山塘、水库</option>
+        <option>工程建设地质灾害</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_9" onchange="ftinytype6_9()" style="width:240px">
+        <option>请选择</option>
+        <option>企业隐患自查自治</option>
+        <option>企业资质证照</option>
+        <option>粉尘涉爆隐患</option>
+        <option>警示标识</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_10" onchange="ftinytype6_10()" style="width:240px">
+        <option>请选择</option>
+        <option>燃气经营与服务</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_11" onchange="ftinytype6_11()" style="width:240px">
+        <option>请选择</option>
+        <option>校园周边安全隐患</option>
+        <option>校园内安全隐患</option>
+    </select>
+    <select class="tiny_type6" id="iitinytype6_12" onchange="ftinytype6_12()" style="width:240px">
+        <option>请选择</option>
+        <option>擅自变动或者损坏房屋</option>
+    </select>
+    <select class="tiny_type7" id="iitinytype7_1" onchange="ftinytype7_1()" style="width:240px">
+        <option>请选择</option>
+        <option>人才战略</option>
+        <option>人力市场管理</option>
+        <option>职业资格考试</option>
+        <option>专业资格考试</option>
+    </select>
+    <select class="tiny_type7" id="iitinytype7_2" onchange="ftinytype7_2()" style="width:240px">
+        <option>请选择</option>
+        <option>计划安置</option>
+    </select>
+    <select class="tiny_type7" id="iitinytype7_3" onchange="ftinytype7_3()" style="width:240px">
+        <option>请选择</option>
+        <option>招聘录用</option>
+    </select>
+    <select class="tiny_type7" id="iitinytype7_4" onchange="ftinytype7_4()" style="width:240px">
+        <option>请选择</option>
+        <option>职务管理</option>
+    </select>
+    <select class="tiny_type8" id="iitinytype8_1" onchange="ftinytype8_1()" style="width:240px">
+        <option>请选择</option>
+        <option>服务态度</option>
+        <option>工作作风</option>
+        <option>服务质量</option>
+        <option>失职渎职</option>
+        <option>滥用职权</option>
+        <option>工作效率</option>
+    </select>
+    <select class="tiny_type8" id="iitinytype8_2" onchange="ftinytype8_2()" style="width:240px">
+        <option>请选择</option>
+        <option>违反工作纪律</option>
+    </select>
+    <select class="tiny_type9" id="iitinytype9_1" onchange="ftinytype9_1()" style="width:240px">
+        <option>请选择</option>
+        <option>经营者欠薪后逃逸、隐匿，或因欠薪被劳动者投诉</option>
+        <option>未妥善处理劳动者工资或经济补偿金问题</option>
+        <option>无证经营的职业介绍所</option>
+        <option>福利待遇纠纷</option>
+        <option>住房公积金</option>
+        <option>就业和再就业职业培训</option>
+        <option>最低工资标准</option>
+    </select>
+    <select class="tiny_type9" id="iitinytype9_2" onchange="ftinytype9_2()" style="width:240px">
+        <option>请选择</option>
+        <option>劳动者的劳动报酬纠纷</option>
+        <option>劳动关系纠纷</option>
+        <option>职工工伤保险</option>
+        <option>用人单位福利赔偿纠纷</option>
+        <option>职工医疗保险</option>
+        <option>职工生育保险</option>
+    </select>
+    <select class="tiny_type9" id="iitinytype9_3" onchange="ftinytype9_3()" style="width:240px">
+        <option>请选择</option>
+        <option>劳动安全</option>
+        <option>剥夺或损害员工工作时间和休息休假的权利</option>
+        <option>为员工缴纳社保不规范</option>
+        <option>未提供必要的劳动环境</option>
+    </select>
+    <select class="tiny_type10" id="iitinytype10_1" onchange="ftinytype10_1()" style="width:240px">
+        <option>请选择</option>
+        <option>道路塌陷、盖板坍塌</option>
+        <option>公共区域垃圾清理</option>
+        <option>小区内垃圾清理</option>
+        <option>宣传栏存在倾斜、倒塌、严重破损等安全隐患</option>
+        <option>公共区域大量存放泥土，影响通行和卫生</option>
+        <option>小区内摆放、堆放物品存在安全隐患或影响卫生、通行</option>
+        <option>公共区域摆放、堆放物品存在安全隐患或影响卫生、通行</option>
+    </select>
+    <select class="tiny_type10" id="iitinytype10_2" onchange="ftinytype10_2()" style="width:240px">
+        <option>请选择</option>
+        <option>业主委员会与物业管理公司的纠纷</option>
+        <option>小区水、电、气维修</option>
+    </select>
+    <select class="tiny_type10" id="iitinytype10_3" onchange="ftinytype10_3()" style="width:240px">
+        <option>请选择</option>
+        <option>社区公共管理</option>
+    </select>
+    <select class="tiny_type10" id="iitinytype10_4" onchange="ftinytype10_4()" style="width:240px">
+        <option>请选择</option>
+        <option>居民自治、民主协商</option>
+    </select>
+    <select class="tiny_type11" id="iitinytype11_1" onchange="ftinytype11_1()" style="width:240px">
+        <option>请选择</option>
+        <option>公共交通管理</option>
+    </select>
+    <select class="tiny_type11" id="iitinytype11_2" onchange="ftinytype11_2()" style="width:240px">
+        <option>请选择</option>
+        <option>道路规划建设</option>
+    </select>
+    <select class="tiny_type11" id="iitinytype11_3" onchange="ftinytype11_3()" style="width:240px">
+        <option>请选择</option>
+        <option>道路和公路交通安全</option>
+    </select>
+    <select class="tiny_type11" id="iitinytype11_4" onchange="ftinytype11_4()" style="width:240px">
+        <option>请选择</option>
+        <option>网约车管理</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_1" onchange="ftinytype12_1()" style="width:240px">
+        <option>请选择</option>
+        <option>合同纠纷</option>
+        <option>消费者权益纠纷</option>
+        <option>工程欠款</option>
+        <option>股份合作公司纠纷</option>
+        <option>房屋征收过程中产生的安置补偿等问题或纠纷</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_2" onchange="ftinytype12_2()" style="width:240px">
+        <option>请选择</option>
+        <option>申报登记信息明显与实际信息不符</option>
+        <option>门窗长期关闭或贴纸的出租屋拒绝或妨碍消防检查</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_3" onchange="ftinytype12_3()" style="width:240px">
+        <option>请选择</option>
+        <option>居住人员隐患</option>
+        <option>涉嫌聚众赌博</option>
+        <option>涉嫌从事色情活动</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_4" onchange="ftinytype12_4()" style="width:240px">
+        <option>请选择</option>
+        <option>户籍管理</option>
+        <option>户籍证件</option>
+        <option>流动人口管理</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_5" onchange="ftinytype12_5()" style="width:240px">
+        <option>请选择</option>
+        <option>警务执法</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_6" onchange="ftinytype12_6()" style="width:240px">
+        <option>请选择</option>
+        <option>新能源产品研发与推广</option>
+        <option>能源开发供应</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_7" onchange="ftinytype12_7()" style="width:240px">
+        <option>请选择</option>
+        <option>其他</option>
+        <option>致敬致谢</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_8" onchange="ftinytype12_8()" style="width:240px">
+        <option>请选择</option>
+        <option>案件侦破</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_9" onchange="ftinytype12_9()" style="width:240px">
+        <option>请选择</option>
+        <option>普法教育</option>
+    </select>
+    <select class="tiny_type12" id="iitinytype12_10" onchange="ftinytype12_10()" style="width:240px">
+        <option>请选择</option>
+        <option>邻里纠纷</option>
+    </select>
+    <select class="tiny_type13" id="iitinytype13_1" onchange="ftinytype13_1()" style="width:240px">
+        <option>请选择</option>
+        <option>综合事件采集</option>
+    </select>
+    <select class="tiny_type13" id="iitinytype13_2" onchange="ftinytype13_2()" style="width:240px">
+        <option>请选择</option>
+        <option>食药监问题</option>
+    </select>
+    <select class="tiny_type13" id="iitinytype13_3" onchange="ftinytype13_3()" style="width:240px">
+        <option>请选择</option>
+        <option>卫生问题</option>
+    </select>
+    <select class="tiny_type14" id="iitinytype14_1" onchange="ftinytype14_1()" style="width:240px">
+        <option>请选择</option>
+        <option>工商经济联络</option>
+    </select>
+    <select class="tiny_type15" id="iitinytype15_1" onchange="ftinytype15_1()" style="width:240px">
+        <option>请选择</option>
+        <option>社区建设</option>
+        <option>生活住房医疗</option>
+        <option>参战退役人员身份认定</option>
+        <option>参试退役人员待遇</option>
+    </select>
+    <select class="tiny_type15" id="iitinytype15_2" onchange="ftinytype15_2()" style="width:240px">
+        <option>请选择</option>
+        <option>福利事业</option>
+    </select>
+    <select class="tiny_type15" id="iitinytype15_3" onchange="ftinytype15_3()" style="width:240px">
+        <option>请选择</option>
+        <option>社团管理</option>
+    </select>
+    <select class="tiny_type15" id="iitinytype15_4" onchange="ftinytype15_4()" style="width:240px">
+        <option>请选择</option>
+        <option>救灾管理</option>
+        <option>医疗救助</option>
+        <option>救灾募捐</option>
+    </select>
+    <select class="tiny_type15" id="iitinytype15_5" onchange="ftinytype15_5()" style="width:240px">
+        <option>请选择</option>
+        <option>复员干部安置</option>
+    </select>
+    <select class="tiny_type16" id="iitinytype16_1" onchange="ftinytype16_1()" style="width:240px">
+        <option>请选择</option>
+        <option>精神文明建设</option>
+    </select>
+    <select class="tiny_type16" id="iitinytype16_2" onchange="ftinytype16_2()" style="width:240px">
+        <option>请选择</option>
+        <option>体育事业</option>
+    </select>
+    <select class="tiny_type16" id="iitinytype16_3" onchange="ftinytype16_3()" style="width:240px">
+        <option>请选择</option>
+        <option>不文明或违法行为</option>
+    </select>
+    <select class="tiny_type16" id="iitinytype16_4" onchange="ftinytype16_4()" style="width:240px">
+        <option>请选择</option>
+        <option>未经批准的营业性演出活动</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_1" onchange="ftinytype17_1()" style="width:240px">
+        <option>请选择</option>
+        <option>通信保障</option>
+        <option>电信运营商监管</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_2" onchange="ftinytype17_2()" style="width:240px">
+        <option>请选择</option>
+        <option>药品（医疗器械）监管</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_3" onchange="ftinytype17_3()" style="width:240px">
+        <option>请选择</option>
+        <option>消费维权</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_4" onchange="ftinytype17_4()" style="width:240px">
+        <option>请选择</option>
+        <option>无照加工厂、无照小作坊、无照维修点、无照废品站、无照商店</option>
+        <option>无照经营网吧</option>
+        <option>无照设立小门店、集贸市场、商场、超市</option>
+        <option>无工业产品生产许可证经营行为</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_5" onchange="ftinytype17_5()" style="width:240px">
+        <option>请选择</option>
+        <option>认证认可标准化</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_6" onchange="ftinytype17_6()" style="width:240px">
+        <option>请选择</option>
+        <option>商标管理</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_7" onchange="ftinytype17_7()" style="width:240px">
+        <option>请选择</option>
+        <option>经济违法行为举报</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_8" onchange="ftinytype17_8()" style="width:240px">
+        <option>请选择</option>
+        <option>出入境检验检疫</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_9" onchange="ftinytype17_9()" style="width:240px">
+        <option>请选择</option>
+        <option>违规收费、价格欺诈</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_10" onchange="ftinytype17_10()" style="width:240px">
+        <option>请选择</option>
+        <option>非法加工食品</option>
+        <option>非法屠宰禽畜</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_11" onchange="ftinytype17_11()" style="width:240px">
+        <option>请选择</option>
+        <option>发展规划</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_12" onchange="ftinytype17_12()" style="width:240px">
+        <option>请选择</option>
+        <option>信息产业发展规划</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_13" onchange="ftinytype17_13()" style="width:240px">
+        <option>请选择</option>
+        <option>知识产权申报</option>
+    </select>
+    <select class="tiny_type17" id="iitinytype17_14" onchange="ftinytype17_14()" style="width:240px">
+        <option>请选择</option>
+        <option>市场垄断</option>
+    </select>
+    <select class="tiny_type18" id="iitinytype18_1" onchange="ftinytype18_1()" style="width:240px">
+        <option>请选择</option>
+        <option>作风建设</option>
+        <option>党的建设</option>
+    </select>
+    <select class="tiny_type18" id="iitinytype18_2" onchange="ftinytype18_2()" style="width:240px">
+        <option>请选择</option>
+        <option>义工联</option>
+    </select>
+    <select class="tiny_type18" id="iitinytype18_3" onchange="ftinytype18_3()" style="width:240px">
+        <option>请选择</option>
+        <option>宣传教育</option>
+    </select><br>
+<!--    <input type="text" name="department"  placeholder="请输入处置部门"/>-->
+    <input type="text" name="department" id="idepartment" placeholder="请输入处置部门"/>
+    <select class="department" id="iidepartment0" style="width:240px">
+        <option>请输入处置部门
+    </select>
+    <select class="department" id="iidepartment1" onchange="fdepartment1()" style="width:240px">
+        <option>请选择</option>
+        <option>龙田街道综合执法队</option>
+        <option>坑梓自来水公司（坑梓辖区）</option>
+        <option>竹坑社区</option>
+        <option>环境保护和水务局</option>
+        <option>市政服务中心（龙田街道办事处）</option>
+        <option>卫生和计划生育局</option>
+        <option>老坑社区</option>
+        <option>大工业区水务有限公司</option>
+        <option>城市管理局</option>
+        <option>广东移动深圳公司</option>
+        <option>坪山供电局</option>
+        <option>龙田社区</option>
+        <option>人力资源局</option>
+        <option>住房和建设局</option>
+        <option>坪山交通运输局</option>
+        <option>规划土地监察大队</option>
+        <option>南布社区</option>
+        <option>交通轨道办</option>
+        <option>市交警支队坪山大队</option>
+        <option>财政局（国资办）</option>
+        <option>教育局</option>
+        <option>社保坪山分局</option>
+        <option>区委组织部</option>
+        <option>城投公司</option>
+        <option>区委政法委</option>
+        <option>坪山联通营业中心</option>
+        <option>坪山公安分局</option>
+        <option>坪山区城中村综合整治办</option>
+        <option>建筑工务局</option>
+        <option>市规划国土委坪山管理局</option>
+        <option>城建办</option>
+        <option>老坑社区（龙田街道办事处）</option>
+        <option>坪山街道电信营业中心</option>
+        <option>劳动办（龙田街道办事处）</option>
+        <option>安全生产监督管理局</option>
+        <option>武装部（龙田街道办事处）</option>
+        <option>城管办（坑梓街道办事处）</option>
+        <option>和平社区</option>
+        <option>土地整备中心（龙田街道办事处）</option>
+        <option>竹坑社区（龙田街道办事处）</option>
+        <option>市市场和质量监管委坪山局</option>
+        <option>龙田社区（龙田街道办事处）</option>
+        <option>经济和科技促进局</option>
+        <option>机关事务管理局</option>
+        <option>值班应急与智慧管理指挥分中心（龙田街道办事处）</option>
+        <option>龙田街道综合执法队（龙田街道办事处）</option>
+        <option>区指挥中心</option>
+        <option>宣传统战办公室（龙田街道办事处）</option>
+        <option>组织部（龙田街道办事处）</option>
+        <option>区指挥中心处置</option>
+        <option>区委宣传部（文体旅游局）</option>
+        <option>区委（区政府）办公室</option>
+        <option>南布社区（龙田街道办事处）</option>
+        <option>坑梓自来水公司</option>
+        <option>纪工委（龙田街道办事处）</option>
+        <option>市政服务中心（坑梓街道办事处）</option>
+        <option>城建办（龙田街道办事处）</option>
+        <option>政府投资项目前期工作管理办公室</option>
+    </select>
+    <select class="department" id="iidepartment2" onchange="fdepartment2()" style="width:240px">
+        <option>请选择</option>
+        <option>环境保护和水务局</option>
+        <option>坪山街道综合执法队</option>
+        <option>和平社区</option>
+        <option>城市管理局</option>
+        <option>市政服务中心（坪山街道办事处）</option>
+        <option>市交警支队坪山大队</option>
+        <option>六和社区（坪山街道办事处）</option>
+        <option>人力资源局</option>
+        <option>卫生和计划生育局</option>
+        <option>教育局</option>
+        <option>坪山供电局</option>
+        <option>坪山交通运输局</option>
+        <option>大工业区水务有限公司</option>
+        <option>六联社区</option>
+        <option>建筑工务局</option>
+        <option>住房和建设局</option>
+        <option>规划土地监察大队</option>
+        <option>交通轨道办</option>
+        <option>区指挥中心处置</option>
+        <option>城市更新局</option>
+        <option>广东移动深圳公司</option>
+        <option>坪山社区</option>
+        <option>经济和科技促进局</option>
+        <option>市市场和质量监管委坪山局</option>
+        <option>坪山公安分局</option>
+        <option>区委组织部</option>
+        <option>安全生产监督管理办公室（坪山街道办事处）</option>
+        <option>坪山联通营业中心</option>
+        <option>劳动办（坪山街道办事处）</option>
+        <option>环境水政监察大队</option>
+        <option>城建办公室（坪山街道办事处）</option>
+        <option>坪山区城中村综合整治办</option>
+        <option>六和社区</option>
+        <option>区委政法委</option>
+        <option>坪山街道电信营业中心</option>
+        <option>坪山自来水有限公司</option>
+        <option>区委宣传部（文体旅游局）</option>
+        <option>区委（区政府）办公室</option>
+        <option>土地整备中心（坪山街道办事处）</option>
+        <option>消安委办（坪山街道办事处）</option>
+        <option>坪山街道综合执法队（坪山街道办事处）</option>
+        <option>坪环社区</option>
+        <option>纪律检查工作委员会（坪山街道办事处）</option>
+        <option>群团工作部</option>
+        <option>市规划国土委坪山管理局</option>
+        <option>机关事务管理局</option>
+        <option>发展和改革局（统计局）</option>
+        <option>社保坪山分局</option>
+        <option>六联社区（坪山街道办事处）</option>
+        <option>和平社区（坪山街道办事处）</option>
+        <option>区测试责任单位一</option>
+        <option>区指挥中心</option>
+        <option>坪山社区（坪山街道办事处）</option>
+        <option>坪山自来水有限公司（坪山街道办事处）</option>
+        <option>区责任单位</option>
+    </select>
+    <select class="department" id="iidepartment3" onchange="fdepartment3()" style="width:240px">
+        <option>请选择</option>
+        <option>城管办（碧岭街道办事处）</option>
+        <option>沙湖社区</option>
+        <option>教育局</option>
+        <option>人力资源局</option>
+        <option>坪山交通运输局</option>
+        <option>碧岭社区</option>
+        <option>市交警支队坪山大队</option>
+        <option>环境保护和水务局</option>
+        <option>土地整备中心（碧岭办）</option>
+        <option>碧岭办事处市政服务中心</option>
+        <option>综治维稳办公室（碧岭街道办事处）</option>
+        <option>住房和建设局</option>
+        <option>规划土地监察大队</option>
+        <option>城建办公室（碧岭街道办事处）</option>
+        <option>区委政法委</option>
+        <option>坪山自来水有限公司</option>
+        <option>办公室（碧岭街道办事处）</option>
+        <option>区指挥中心处置</option>
+        <option>卫生和计划生育局</option>
+        <option>大工业区水务有限公司</option>
+        <option>坪山公安分局</option>
+        <option>城市管理局</option>
+        <option>交通轨道办</option>
+        <option>区委组织部</option>
+        <option>汤坑社区</option>
+        <option>民政局</option>
+        <option>坪山供电局</option>
+        <option>坪山区城中村综合整治办</option>
+        <option>市市场和质量监管委坪山局</option>
+        <option>经济和科技促进局</option>
+        <option>坪山街道电信营业中心</option>
+        <option>区委宣传部（文体旅游局）</option>
+        <option>社保坪山分局</option>
+        <option>天隆广播电视网络有限公司</option>
+        <option>机关事务管理局</option>
+        <option>公共服务办（碧岭街道办事处）</option>
+        <option>发展和改革局（统计局）</option>
+        <option>群团工作部</option>
+        <option>碧岭办事处市政服务中心（碧岭街道办事处）</option>
+        <option>碧岭社区（碧岭街道办事处）</option>
+        <option>科技创新服务署</option>
+        <option>城市更新局</option>
+        <option>区指挥中心</option>
+        <option>区测试责任单位一</option>
+        <option>汤坑社区（碧岭街道办事处）</option>
+        <option>坪山联通营业中心</option>
+        <option>沙湖社区（碧岭街道办事处）</option>
+        <option>广东移动深圳公司</option>
+        <option>消安委办（碧岭街道办事处）</option>
+        <option>建筑工务局</option>
+        <option>市规划国土委坪山管理局</option>
+    </select>
+    <select class="department" id="iidepartment4" onchange="fdepartment4()" style="width:240px">
+        <option>请选择</option>
+        <option>环境保护和水务局</option>
+        <option>城管办（坑梓街道办事处）</option>
+        <option>教育局</option>
+        <option>市政服务中心（坑梓街道办事处）</option>
+        <option>坑梓自来水公司（坑梓辖区）</option>
+        <option>市交警支队坪山大队</option>
+        <option>城市管理局</option>
+        <option>金沙社区</option>
+        <option>沙田社区</option>
+        <option>坪山交通运输局</option>
+        <option>规划土地监察大队</option>
+        <option>秀新社区</option>
+        <option>坪山街道电信营业中心</option>
+        <option>纪工委（坑梓街道办事处）</option>
+        <option>大工业区水务有限公司</option>
+        <option>坪山区城中村综合整治办</option>
+        <option>坑梓社区</option>
+        <option>坪山公安分局</option>
+        <option>人力资源局</option>
+        <option>坪山供电局</option>
+        <option>消防安全委员会办公室</option>
+        <option>城建办</option>
+        <option>住房和建设局</option>
+        <option>建筑工务局</option>
+        <option>金沙社区（坑梓街道办事处）</option>
+        <option>劳动办（坑梓街道办事处）</option>
+        <option>机关事务中心</option>
+        <option>城建办（坑梓街道办事处）</option>
+        <option>卫生和计划生育局</option>
+        <option>坑梓街道分中心处置</option>
+        <option>坪山联通营业中心</option>
+        <option>市市场和质量监管委坪山局</option>
+        <option>广东移动深圳公司</option>
+        <option>交通轨道办</option>
+        <option>龙田街道综合执法队</option>
+        <option>坪山街道综合执法队</option>
+        <option>经济和科技促进局</option>
+        <option>综治维稳办（坑梓街道办事处）</option>
+        <option>秀新社区（坑梓街道办事处）</option>
+        <option>坑梓社区（坑梓街道办事处）</option>
+        <option>区指挥中心处置</option>
+        <option>区指挥中心</option>
+        <option>组织部（坑梓街道办事处）</option>
+        <option>沙田社区（坑梓街道办事处）</option>
+        <option>坑梓自来水公司</option>
+        <option>安监办（坑梓街道办事处）</option>
+        <option>市规划国土委坪山管理局</option>
+        <option>机关事务管理局</option>
+        <option>民政局</option>
+        <option>区委组织部</option>
+        <option>城市更新局</option>
+        <option>社保坪山分局</option>
+        <option>坑梓自来水公司（坑梓街道办事处）</option>
+        <option>消防安全委员会办公室（坑梓街道办事处）</option>
+        <option>坑梓街道分中心处置（坑梓街道办事处）</option>
+    </select>
+    <select class="department" id="iidepartment5" onchange="fdepartment5()" style="width:240px">
+        <option>请选择</option>
+        <option>马峦办事处综合执法队</option>
+        <option>广东移动深圳公司</option>
+        <option>人力资源局</option>
+        <option>教育局</option>
+        <option>政府投资项目前期工作管理办公室</option>
+        <option>大工业区水务有限公司</option>
+        <option>土地整备中心（马峦）</option>
+        <option>坪山公安分局</option>
+        <option>市交警支队坪山大队</option>
+        <option>环境保护和水务局</option>
+        <option>规划土地监察大队</option>
+        <option>市政服务中心（马峦街道办事处）</option>
+        <option>建筑工务局</option>
+        <option>坪山交通运输局</option>
+        <option>坪环社区</option>
+        <option>卫生和计划生育局</option>
+        <option>坪山街道电信营业中心</option>
+        <option>城市管理局</option>
+        <option>城建办公室（马峦街道办事处）</option>
+        <option>江岭社区</option>
+        <option>住房和建设局</option>
+        <option>市市场和质量监管委坪山局</option>
+        <option>土地整备局</option>
+        <option>区委政法委</option>
+        <option>坪山自来水有限公司</option>
+        <option>坪山供电局</option>
+        <option>劳动管理办公室（马峦街道办事处）</option>
+        <option>安全生产监督管理局</option>
+        <option>和平社区</option>
+        <option>发展和改革局（统计局）</option>
+        <option>消防安全管理委员会办公室</option>
+        <option>沙坣社区</option>
+        <option>区委宣传部（文体旅游局）</option>
+        <option>坪环社区（马峦街道办事处）</option>
+        <option>天隆广播电视网络有限公司</option>
+        <option>城投公司</option>
+        <option>交通轨道办</option>
+        <option>城市管理办公室（马峦街道办事处）</option>
+        <option>综治维稳办公室（马峦街道办事处）</option>
+        <option>城市更新局</option>
+        <option>值班应急与智慧管理指挥分中心（马峦街道办事处）</option>
+        <option>民政局</option>
+        <option>社保坪山分局</option>
+        <option>机关事务服务中心（马峦街道办事处）</option>
+        <option>市规划国土委坪山管理局</option>
+        <option>江岭社区（马峦街道办事处）</option>
+        <option>马峦办事处综合执法队（马峦街道办事处）</option>
+        <option>市规土委坪山管理局</option>
+        <option>沙坣社区（马峦街道办事处）</option>
+        <option>公共服务办公室（马峦街道办事处）</option>
+        <option>街区发展办公室（马峦街道办事处）</option>
+        <option>区指挥中心</option>
+        <option>坪山联通营业中心</option>
+        <option>经济和科技促进局</option>
+    </select>
+    <select class="department" id="iidepartment6" onchange="fdepartment6()" style="width:240px">
+        <option>请选择</option>
+        <option>规划土地监察大队</option>
+        <option>教育局</option>
+        <option>坪山交通运输局</option>
+        <option>石井办事处综合执法队</option>
+        <option>石井办事处市政服务中心</option>
+        <option>城市管理局</option>
+        <option>环境保护和水务局</option>
+        <option>区委组织部</option>
+        <option>民政局</option>
+        <option>坪山供电局</option>
+        <option>金龟社区工作站</option>
+        <option>石井社区工作站（石井街道办事处）</option>
+        <option>石井社区工作站</option>
+        <option>住房和建设局</option>
+        <option>坪山公安分局</option>
+        <option>消安委办（石井街道办事处）</option>
+        <option>市市场和质量监管委坪山局</option>
+        <option>坪山街道电信营业中心</option>
+        <option>坪山自来水有限公司</option>
+        <option>市交警支队坪山大队</option>
+        <option>公共服务办（石井街道办事处）</option>
+        <option>坪山区城中村综合整治办</option>
+        <option>城建办公室（石井街道办事处）</option>
+        <option>大工业区水务有限公司</option>
+        <option>人力资源局</option>
+        <option>区指挥中心处置</option>
+        <option>广东移动深圳公司</option>
+        <option>田头社区工作站</option>
+        <option>田头社区工作站（石井街道办事处）</option>
+        <option>石井办事处综合执法队（石井街道办事处）</option>
+        <option>石井办事处市政服务中心（石井街道办事处）</option>
+        <option>田心社区工作站（石井街道办事处）</option>
+        <option>土地整备中心（石井街道办事处）</option>
+        <option>卫生和计划生育局</option>
+        <option>交通轨道办</option>
+    </select>
+    <br>
+    <input type="text" name="way" id="iway"  placeholder="请输入问题来源"/>
+    <select class="way" id = "iiway" style="width:240px" onchange="fway()">
+        <option>请输入问题来源</option>
+        <option>12345</option>
+        <option>@坪山</option>
+        <option>美丽深圳</option>
+        <option>固话投诉</option>
+        <option>政府信箱</option>
+        <option>12319</option>
+    </select><br>
+    <input type="text" name="progress" id="iprogress"  placeholder="请输入事件进度"/>
+    <select class="progress" id = "iiprogress" style="width:240px" onchange="fprogress()">
+        <option>请输入事件进度</option>
+        <option>超期办结</option>
+        <option>处置中</option>
+        <option>按期办结</option>
+    </select><br>
+    <input type="text" name="nature" id="inature" placeholder="请输入事件性质"/>
+    <select class="nature" id = "iinature" style="width:240px" onchange="fnature()">
+        <option>请输入事件性质</option>
+        <option>投诉</option>
+        <option>咨询</option>
+        <option>建议</option>
+        <option>感谢</option>
+        <option>求决</option>
+        <option>其他</option>
+    </select><br>
+    <input type="submit" value="添加"/>
+</form>
+{% for message in get_flashed_messages() %}
+    {{ message }}
+    <br>
+{% endfor %}</div>
+<!--                          主体结束-->
+					  </div>
+					</div>
+				</div>
+			</div>
+			<!--遮罩-->
+			<div class="main-mask">
+
+			</div>
+		</div>
+		<script type="text/javascript">
+			var scope={
+				link:'./welcome.html'
+			}
+		</script>
+		<script src="../../static/admin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/admin/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../static/admin/js/main.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+</html>
+
+<script type="text/javascript">
+    var area = document.getElementById('moocBox');
+    var con1 = document.getElementById('con1');
+    var con2 = document.getElementById('con2');
+    var speed = 50;
+    area.scrollTop = 0;
+    con2.innerHTML = con1.innerHTML;
+    function scrollUp(){
+        if(area.scrollTop >= con1.scrollHeight) {
+            area.scrollTop = 0;
+        }else{
+            area.scrollTop ++; //向上滚动
+        }
+    }
+    var myScroll = setInterval("scrollUp()",speed);
+    area.onmouseover = function(){
+        clearInterval(myScroll);
+    }
+    area.onmouseout = function(){
+        myScroll = setInterval("scrollUp()",speed);
+    }
+</script>
